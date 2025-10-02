@@ -1,0 +1,6 @@
+/* tailwind-input.css */
+@import "tailwindcss";
+@source "../../templates/";
+
+/* Import your compiled SCSS (optional) */
+@import "../styles/landing/landing.css";

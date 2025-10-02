@@ -1,0 +1,138 @@
+//////////////////////////////
+
+// LIBRARIES
+
+//////////////////////////////
+
+@use "../base/variables.scss" as vars;
+@use "../base/mixins.scss" as mixins;
+
+//////////////////////////////
+
+// GLOBAL STYLES
+
+//////////////////////////////
+
+body {
+    margin: 0;
+    padding: 50px;
+    display: block;
+    background-color: vars.$color-background;
+
+    main {
+        max-width: 900px;
+        display: block;
+        margin: auto;
+        width: 100%;
+        background: vars.$color-secondary;
+        border-radius: 8px;
+        padding: 28px;
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+
+        h1, h2, h3, h4, h5, h6 {
+            @include mixins.header-font;
+            color: vars.$color-primary;
+        }
+        p, dt, dd, li, code {
+            @include mixins.body-font;
+        }
+    }
+}
+
+/* MEDIA QUERIES ***************************/
+
+//////////////////////////////
+
+// PHONE
+
+//////////////////////////////
+
+@media (min-width: vars.$break-point-phone) {
+    h1 {
+        font-size: 50px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    h4 {
+        font-size: 26px;
+    }
+
+    h5 {
+        font-size: 24px;
+    }
+
+    h6 {
+        font-size: 22px;
+    }
+}
+
+//////////////////////////////
+
+// TABLET
+
+//////////////////////////////
+
+@media (min-width: vars.$break-point-tablet) {
+    h1 {
+        font-size: 75px;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    h3 {
+        font-size: 33px;
+    }
+
+    h4 {
+        font-size: 31px;
+    }
+
+    h5 {
+        font-size: 29px;
+    }
+
+    h6 {
+        font-size: 27px;
+    }
+}
+
+//////////////////////////////
+
+// DESKTOP
+
+//////////////////////////////
+
+@media (min-width: vars.$break-point-desktop) {
+    h1 {
+        font-size: 90px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    h3 {
+        font-size: 38px;
+    }
+
+    h4 {
+        font-size: 36px;
+    }
+
+    h5 {
+        font-size: 34px;
+    }
+
+    h6 {
+        font-size: 32px;
+    }
+}

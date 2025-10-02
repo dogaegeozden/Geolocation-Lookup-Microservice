@@ -1,0 +1,13 @@
+{
+  "scripts": {
+      "compile-tailwind-hr": "npx @tailwindcss/cli -i ./app/static/tailwind/tailwind_input.css -o ./app/static/tailwind/tailwind_output.css --watch",
+      "compile-tailwind": "npx @tailwindcss/cli -i ./app/static/tailwind/tailwind_input.css -o ./app/static/tailwind/tailwind_output.css --watch --minify",
+      "watch-all": "npx concurrently \"npm run watch-sass\" \"npm run compile-tailwind\"",
+      "watch-sass": "sass --watch ./app/static/styles:./app/static/styles --style=compressed"
+  },
+  "dependencies": {
+      "@tailwindcss/cli": "^4.1.14",
+      "sass": "^1.93.2",
+      "tailwindcss": "^4.1.14"
+  }
+}

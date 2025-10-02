@@ -1,0 +1,31 @@
+//////////////////////////////
+
+// LIBRARIES
+
+//////////////////////////////
+
+@use "variables.scss" as vars;
+
+//////////////////////////////
+
+// TEXT STYLES
+
+//////////////////////////////
+
+@mixin header-font {
+    font-family: vars.$header-font-family;
+    font-weight: 600;
+    font-style: normal;
+}
+
+@mixin accent-font {
+    font-family: vars.$accent-font-family;
+    font-weight: 600;
+    font-style: normal;
+}
+
+@mixin body-font {
+    font-family: vars.$body-text-font-family;
+    font-weight: 600;
+    font-style: normal;
+}
