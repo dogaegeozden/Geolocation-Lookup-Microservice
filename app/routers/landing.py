@@ -10,7 +10,7 @@ router = APIRouter()
 async def root(request: Request):
     ip_address = get_ip(request)
     country_code = extract_geolocation_country(ip_address)
-    return RedirectResponse(url="/tr/" if info["country_code"] == "TR" else "/en/")
+    return RedirectResponse(url="/tr/" if country_code == "TR" else "/en/")
 
 @router.get("/en/", response_class=HTMLResponse)
 async def landing_page_en(request: Request):
