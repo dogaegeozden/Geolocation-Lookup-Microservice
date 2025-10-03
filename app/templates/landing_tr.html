@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Geolocation Lookup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+        href="https://fonts.googleapis.com/css2?
+            family=Bitcount+Prop+Single+Ink:wght@100..900&
+            family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&
+            family=Raleway:ital,wght@0,100..900;1,100..900&
+            display=swap" 
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', path='tailwind/tailwind_output.css') }}">
+</head>
+<body>
+    <main>
+        <!-- HEADER -->
+        <header class="mb-11">
+            <form class="max-w-sm mb-10">
+                <select id="countries" class="border border-gray-700 text-md text-gray-700 rounded-lg block p-3">
+                    <option value="EN">English</option>
+                    <option selected value="TR">Turkish</option>
+                </select>
+            </form>
+            <h1 class="text-center my-2">Coğrafi konum sorgulaması nedir?</h1>
+        </header>
+    
+        <div class="p-3 mb-10">
+            <p>
+               Bu uygulama, verilen herhangi bir IP adresi için hızlı ve güvenilir coğrafi konum sorgulamaları 
+               yapmanıza olanak tanır. Bir IP adresi girerek ülke, bölge, şehir, enlem, boylam, saat dilimi ve 
+               daha fazlası gibi faydalı bilgilere erişebilirsiniz. Web arayüzü veya komut satırı istekleri 
+               üzerinden kullanılabilecek şekilde basit tasarlanmış hafif bir mikroservistir. Geliştiriciler, 
+               konum tabanlı hizmetler, analiz veya güvenlik izleme için projelerine kolayca entegre edebilirler.
+            </p>
+        </div>
+
+        <div class="overflow-x-auto rounded border border-gray-300 p-3 mb-4">
+            <h2 class="mb-4">Basit Coğrafi Konum Sorgulama API'si!</h2>
+            <div class="flow-root">
+                <dl class="-my-3 divide-y divide-gray-300 text-md">
+                    <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                        <dt class="font-medium text-gray-900">
+                            $ curl http://localhost:8000/geolocation/all/212.8.253.145
+                        </dt>
+                        <dd class="text-gray-700 sm:col-span-2">
+                            {"all":{"ip":"212.8.253.145","country_short":"NL",
+                            "country_long":"Netherlands (Kingdom of the)","region":"Zuid-Holland",
+                            "city":"Naaldwijk","latitude":"51.994064","longitude":"4.209895",
+                            "zipcode":"2673","timezone":"+02:00"}}
+                        </dd>
+                    </div>
+    
+                    <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                        <dt class="font-medium text-gray-900">
+                            $ curl http://localhost:8000/geolocation/country/212.8.253.145
+                        </dt>
+                        <dd class="text-gray-700 sm:col-span-2">{"country_code":"NL"}</dd>
+                    </div>
+    
+                    <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                        <dt class="font-medium text-gray-900">
+                            $ curl http://localhost:8000/geolocation/city/212.8.253.145
+                        </dt>
+                        <dd class="text-gray-700 sm:col-span-2">{"city_name":"Naaldwijk"}</dd>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                        <dt class="font-medium text-gray-900">
+                            $ curl http://localhost:8000/geolocation/coordinates/212.8.253.145
+                        </dt>
+                        <dd class="text-gray-700 sm:col-span-2">{"coordinates":"51.994064, 4.209895"}</dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+        
+        <hr class="my-6 border-t border-gray-300" />
+
+        <!-- FOOTER -->
+        <footer class="text-center text-md py-4">
+            <p class="text-sm">Telif Hakkı © 2025 Doğa Ege Özden. Tüm hakları saklıdır.</p>
+            <p class="text-sm">
+                Bu mikroservis, <a href="https://lite.ip2location.com">IP coğrafi konum</a> 
+                için IP2Location LITE veritabanını kullanır
+            </p>
+        </footer>
+    </main>
+    <script>
+        const select = document.getElementById('countries');
+
+        select.addEventListener('change', function() {
+            if (this.value === 'EN') {
+                window.location.href = '/en/';
+            } else if (this.value === 'TR') {
+                window.location.href = '/tr/';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -6,14 +6,21 @@
     <title>Geolocation Lookup</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Knewave&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Story+Script&display=swap" rel="stylesheet">
+    <link 
+        href="https://fonts.googleapis.com/css2?
+            family=Bitcount+Prop+Single+Ink:wght@100..900&
+            family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&
+            family=Raleway:ital,wght@0,100..900;1,100..900&
+            display=swap" 
+        rel="stylesheet"
+    />
     <link rel="stylesheet" href="{{ url_for('static', path='tailwind/tailwind_output.css') }}">
 </head>
 <body>
     <main>
         <!-- HEADER -->
-        <header class="mb-12">
-            <form class="max-w-sm">
+        <header class="mb-11">
+            <form class="max-w-sm mb-10">
                 <select id="countries" class="border border-gray-700 text-md text-gray-700 rounded-lg block p-3">
                     <option selected value="EN">English</option>
                     <option value="TR">Turkish</option>
@@ -24,31 +31,49 @@
     
         <div class="p-3 mb-10">
             <p>
-                This application allows you to perform fast and reliable geolocation lookups for any given IP address. By entering an IP, you can retrieve useful information such as the country, region, city, latitude, longitude, timezone, and more. It is a lightweight microservice designed to be simple to use, whether through the web interface or command-line requests. Developers can easily integrate it into their projects for location-based services, analytics, or security monitoring.
+                This application allows you to perform fast and reliable geolocation lookups for any given IP 
+                address. By entering an IP, you can retrieve useful information such as the country, region, 
+                city, latitude, longitude, timezone, and more. It is a lightweight microservice designed to 
+                be simple to use, whether through the web interface or command-line requests. Developers can 
+                easily integrate it into their projects for location-based services, analytics, or 
+                security monitoring.
             </p>
         </div>
 
         <div class="overflow-x-auto rounded border border-gray-300 p-3 mb-4">
-            <h2 class="mb-4">Simple Geolocation Lookup API!</h2>
+            <h2>Simple Geolocation Lookup API!</h2>
             <div class="flow-root">
                 <dl class="-my-3 divide-y divide-gray-300 text-md">
                     <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
-                        <dt class="font-medium text-gray-900">$ curl http://localhost:8000/geolocation/all/212.8.253.145</dt>
-                        <dd class="text-gray-700 sm:col-span-2">{"all":{"ip":"212.8.253.145","country_short":"NL","country_long":"Netherlands (Kingdom of the)","region":"Zuid-Holland","city":"Naaldwijk","latitude":"51.994064","longitude":"4.209895","zipcode":"2673","timezone":"+02:00"}}</dd>
+                        <dt class="font-medium text-gray-900">
+                            $ curl http://localhost:8000/geolocation/all/212.8.253.145
+                        </dt>
+                        <dd class="text-gray-700 sm:col-span-2">
+                            {"all":{"ip":"212.8.253.145","country_short":"NL",
+                            "country_long":"Netherlands (Kingdom of the)","region":"Zuid-Holland",
+                            "city":"Naaldwijk","latitude":"51.994064","longitude":"4.209895",
+                            "zipcode":"2673","timezone":"+02:00"}}
+                        </dd>
                     </div>
     
                     <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
-                        <dt class="font-medium text-gray-900">$ curl http://localhost:8000/geolocation/country/212.8.253.145</dt>
+                        <dt class="font-medium text-gray-900">
+                            $ curl http://localhost:8000/geolocation/country/212.8.253.145
+                        </dt>
                         <dd class="text-gray-700 sm:col-span-2">{"country_code":"NL"}</dd>
                     </div>
     
                     <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
-                        <dt class="font-medium text-gray-900">$ curl http://localhost:8000/geolocation/city/212.8.253.145</dt>
+                        <dt class="font-medium text-gray-900">
+                            $ curl http://localhost:8000/geolocation/city/212.8.253.145
+                        </dt>
                         <dd class="text-gray-700 sm:col-span-2">{"city_name":"Naaldwijk"}</dd>
                     </div>
 
                     <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
-                        <dt class="font-medium text-gray-900">$ curl http://localhost:8000/geolocation/coordinates/212.8.253.145</dt>
+                        <dt class="font-medium text-gray-900">
+                            $ curl http://localhost:8000/geolocation/coordinates/212.8.253.145
+                        </dt>
                         <dd class="text-gray-700 sm:col-span-2">{"coordinates":"51.994064, 4.209895"}</dd>
                     </div>
                 </dl>
@@ -59,8 +84,11 @@
 
         <!-- FOOTER -->
         <footer class="text-center text-md py-4">
-            <p class="text-sm">Copyright © 2025 Doga Ege Ozden. All rights reserverd.</p>
-            <p class="text-sm">This microservice uses the IP2Location LITE database for <a href="https://lite.ip2location.com">IP geolocation</a>.</p>
+            <p class="text-sm">Copyright © 2025 Doğa Ege Özden. All rights reserverd.</p>
+            <p class="text-sm">
+                This microservice uses the IP2Location LITE database for 
+                <a href="https://lite.ip2location.com">IP geolocation</a>.
+            </p>
         </footer>
     </main>
     <script>

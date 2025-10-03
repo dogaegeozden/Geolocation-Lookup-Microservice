@@ -1,8 +1,8 @@
 # Geolocation Lookup
 
-A lightweight microservice for IP-based geolocation lookup, providing country, city, region, coordinates and more via a simple API.
+![Screenshot1](https://raw.githubusercontent.com/dogaegeozden/Geolocation-Lookup-Microservice/refs/heads/main/app_images/sc_1.png)
 
----
+A lightweight microservice for IP-based geolocation lookup, providing country, city, region, coordinates and more via a simple API.
 
 ## Features
 
@@ -11,8 +11,6 @@ A lightweight microservice for IP-based geolocation lookup, providing country, c
 - Simple RESTful API endpoints  
 - Lightweight and easy to deploy  
 - Uses [IP2Location LITE](https://lite.ip2location.com) database  
-
----
 
 ## Examples
 
